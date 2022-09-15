@@ -66,9 +66,9 @@ function updateFilters() {
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-    for (var filterToApply in filtersObject) {
+    for (var filter in filtersObject) {
       //filteredData = filteredData.filter(row => row.datetime === date);
-      filteredData = filteredData.filter(row => row[filterToApply] === filtersObject[filterToApply]);
+      filteredData = filteredData.filter(row => row[filter].indexOf(filtersObject[filter].toLowerCase()) > -1);
     }    
     console.log(filteredData);
     // 10. Finally, rebuild the table using the filtered data
